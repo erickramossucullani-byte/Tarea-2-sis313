@@ -1,13 +1,28 @@
-let seleccion = document.getElementById("seleccion");
-let maxGoleador = document.getElementById("maxGoleador");
-let balonDeOro = document.getElementById("balonDeOro");
-let partido = document.getElementById("partido");
-let goat = document.getElementById("goat");
-let resultado = document.getElementById("respuesta");
-let btn = document.getElementById("boton");
+const boton = document.getElementById("boton");
 
-btn.addEventListener("click", (event) => {
-    event.preventDefault();
-    resultado.innerHTML = "Seleccíon:  " + seleccion.value + "<br>" + " Máximo Goleador:  " + maxGoleador.value + "<br>" + "Máximo Ganador del Ballon d'Or:  " + balonDeOro.value + "<br>" +  " Mi partdio mas triste fue:  " + partido.value + "<br>"+"El GOAT es:   " + goat.value;
-    console.log(resultado.innerHTML);
+boton.addEventListener("click", function(evento) {
+    
+    evento.preventDefault(); 
+
+    let puntuacion = 0;
+
+    
+    if (document.getElementById("planeta").value === "Cleopatra") {
+        puntuacion++;
+    }
+    if (document.getElementById("guerra").value === "1939") {
+        puntuacion++;
+    }
+    if (document.getElementById("descubrio").value === "Cristobal Colón") {
+        puntuacion++;
+    }
+    if (document.getElementById("piramides").value === "Egipto") {
+        puntuacion++;
+    }
+    if (document.getElementById("recomendaria").value === "Siglo XXI") {
+        puntuacion++;
+    }
+
+    
+    document.getElementById("respuesta").innerText = "Tu puntuación es: " + puntuacion + " de 5";
 });
